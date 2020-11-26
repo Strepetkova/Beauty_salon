@@ -31,6 +31,8 @@ namespace RentOfMall
                 Captcha captcha = new Captcha();
                 DialogResult dr = captcha.ShowDialog();
             }
+            logintb.Text = "Vseslava@gmai.com";
+            passwordtb.Text = "fhDSBf";
         }
 
         private void signInButton_Click(object sender, EventArgs e)
@@ -40,23 +42,14 @@ namespace RentOfMall
                 Captcha captcha = new Captcha();
                 DialogResult dr = captcha.ShowDialog();
             }
-            if (logintb.Text == "" || passwordtb.Text == "")
+            else if (logintb.Text == "" || passwordtb.Text == "")
             {
                 MessageBox.Show("Внимание! Необходимо заполнить все поля!", "Ошибка входа в систему!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Authorization.count++;
                 return;
             }
-            //var help = from passOut in db.Employee
-            //           where passOut.Login == logintb.Text
-            //           where passOut.Password == passwordtb.Text
-            //           select passOut;
-            //if( help != null)
-            //{
-            //    help.Where(x => x.Role == "Администратор");
-
-            //}
-            Employee employee = db.Employee.FirstOrDefault(x => x.Login==logintb.Text);
+            Employee employee = db.Employee.FirstOrDefault(x => x.Login==logintb.Text.ToUpper());
             if ((employee != null) && employee.Password == passwordtb.Text)
             {
                 em = employee;

@@ -34,7 +34,6 @@ namespace RentOfMall
             this.logintb = new System.Windows.Forms.TextBox();
             this.passwordtb = new System.Windows.Forms.TextBox();
             this.signInButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameFormlb
@@ -81,6 +80,7 @@ namespace RentOfMall
             this.passwordtb.Location = new System.Drawing.Point(361, 192);
             this.passwordtb.Margin = new System.Windows.Forms.Padding(4);
             this.passwordtb.Name = "passwordtb";
+            this.passwordtb.PasswordChar = '*';
             this.passwordtb.Size = new System.Drawing.Size(256, 26);
             this.passwordtb.TabIndex = 4;
             // 
@@ -95,21 +95,11 @@ namespace RentOfMall
             this.signInButton.UseVisualStyleBackColor = true;
             this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(691, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 485);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.signInButton);
             this.Controls.Add(this.passwordtb);
             this.Controls.Add(this.logintb);
@@ -125,7 +115,6 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.logintb, 0);
             this.Controls.SetChildIndex(this.passwordtb, 0);
             this.Controls.SetChildIndex(this.signInButton, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +127,5 @@ namespace RentOfMall
         private System.Windows.Forms.TextBox logintb;
         private System.Windows.Forms.TextBox passwordtb;
         private System.Windows.Forms.Button signInButton;
-        private System.Windows.Forms.Button button1;
     }
 }
