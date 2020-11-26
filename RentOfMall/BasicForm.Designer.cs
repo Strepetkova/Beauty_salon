@@ -31,6 +31,8 @@ namespace RentOfMall
         {
             this.NameFormlb = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NameFormlb
@@ -38,7 +40,7 @@ namespace RentOfMall
             this.NameFormlb.AutoSize = true;
             this.NameFormlb.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameFormlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.NameFormlb.Location = new System.Drawing.Point(343, 22);
+            this.NameFormlb.Location = new System.Drawing.Point(376, 26);
             this.NameFormlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameFormlb.Name = "NameFormlb";
             this.NameFormlb.Size = new System.Drawing.Size(100, 22);
@@ -54,12 +56,23 @@ namespace RentOfMall
             this.exitButton.Text = "Выйти";
             this.exitButton.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RentOfMall.Properties.Resources.Эмблема;
+            this.pictureBox1.Location = new System.Drawing.Point(311, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // BasicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 497);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.NameFormlb);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -68,6 +81,7 @@ namespace RentOfMall
             this.Name = "BasicForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,6 +91,7 @@ namespace RentOfMall
 
         public System.Windows.Forms.Label NameFormlb;
         public System.Windows.Forms.Button exitButton;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -34,6 +34,7 @@ namespace RentOfMall
             this.logintb = new System.Windows.Forms.TextBox();
             this.passwordtb = new System.Windows.Forms.TextBox();
             this.signInButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NameFormlb
@@ -46,6 +47,10 @@ namespace RentOfMall
             // 
             this.exitButton.Size = new System.Drawing.Size(95, 30);
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(290, 12);
             // 
             // loginlb
             // 
@@ -108,6 +113,7 @@ namespace RentOfMall
             this.Name = "Authorization";
             this.Text = "Authorization";
             this.Load += new System.EventHandler(this.Authorization_Load);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.exitButton, 0);
             this.Controls.SetChildIndex(this.NameFormlb, 0);
             this.Controls.SetChildIndex(this.loginlb, 0);
@@ -115,6 +121,7 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.logintb, 0);
             this.Controls.SetChildIndex(this.passwordtb, 0);
             this.Controls.SetChildIndex(this.signInButton, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

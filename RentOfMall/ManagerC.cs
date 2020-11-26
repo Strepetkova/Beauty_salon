@@ -13,6 +13,8 @@ namespace RentOfMall
 {
     public partial class ManagerC : RentOfMall.BasicForm
     {
+        public static bool addchange = false;
+
         Model1 db = new Model1();
         public ManagerC()
         {
@@ -67,16 +69,12 @@ namespace RentOfMall
         {
             mallBindingSource.DataSource = null;
             NotRemoveStatus();
-            //mallBindingSource.DataSource = db.Mall.ToList<Mall>();
         }
 
         private void sortStatusButton_Click(object sender, EventArgs e)
         {
             //List<Mall> mall1 = (List<Mall>)mallBindingSource.List;
             //mall1.Sort(MallStatusSort);
-            List<Mall> malls = new List<Mall>();
-            
-
         }
 
         private void filtersitycmb_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +94,54 @@ namespace RentOfMall
                              select p;
             mallBindingSource.DataSource = fillstatus.ToList();
         }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            Mall mall = (Mall)mallBindingSource.Current;
+            DialogResult dr = MessageBox.Show("Вы действтиельно хотите удалить ТЦ - " +
+                mall.NameMall.ToString(), "Удаление ТЦ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                db.Mall.Remove(mall);
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            NotRemoveStatus();
+        }
+
+        private void addMallButton_Click(object sender, EventArgs e)
+        {
+            ManagerC.addchange = true;
+            InterfaceMall im = new InterfaceMall();
+            im.db = db;
+            DialogResult dr = im.ShowDialog();
+            if(dr == DialogResult.OK)
+            {
+                mallBindingSource.DataSource = db.Mall.ToList();
+            }
+        }
+
+        private void changeMallButton_Click(object sender, EventArgs e)
+        {
+            ManagerC.addchange = false;
+            InterfaceMall im = new InterfaceMall();
+            Mall mall = (Mall)mallBindingSource.Current;
+            im.db = db;
+            im.mall = mall;
+            DialogResult dr = im.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                mallBindingSource.DataSource = db.Mall.ToList();
+            }
+        }
+
         //int MallStatusSort(Mall m1)
         //{
         //    if (m1.Status == "План")

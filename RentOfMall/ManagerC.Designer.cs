@@ -46,6 +46,10 @@ namespace RentOfMall
             this.filtersitycmb = new System.Windows.Forms.ComboBox();
             this.filterstatuslb = new System.Windows.Forms.Label();
             this.filterstatuscmb = new System.Windows.Forms.ComboBox();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.addMallButton = new System.Windows.Forms.Button();
+            this.changeMallButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.malldataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mallBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,8 +62,12 @@ namespace RentOfMall
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(23, 517);
+            this.exitButton.Location = new System.Drawing.Point(21, 535);
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(282, 12);
             // 
             // malldataGridView
             // 
@@ -74,7 +82,7 @@ namespace RentOfMall
             this.floorDataGridViewTextBoxColumn,
             this.сoefficientDataGridViewTextBoxColumn});
             this.malldataGridView.DataSource = this.mallBindingSource;
-            this.malldataGridView.Location = new System.Drawing.Point(23, 159);
+            this.malldataGridView.Location = new System.Drawing.Point(21, 160);
             this.malldataGridView.Name = "malldataGridView";
             this.malldataGridView.Size = new System.Drawing.Size(950, 295);
             this.malldataGridView.TabIndex = 2;
@@ -200,11 +208,44 @@ namespace RentOfMall
             this.filterstatuscmb.TabIndex = 9;
             this.filterstatuscmb.SelectedIndexChanged += new System.EventHandler(this.filterstatuscmb_SelectedIndexChanged);
             // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(21, 474);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(118, 34);
+            this.removeButton.TabIndex = 10;
+            this.removeButton.Text = "Удалить ТЦ";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // addMallButton
+            // 
+            this.addMallButton.Location = new System.Drawing.Point(415, 475);
+            this.addMallButton.Name = "addMallButton";
+            this.addMallButton.Size = new System.Drawing.Size(133, 33);
+            this.addMallButton.TabIndex = 11;
+            this.addMallButton.Text = "Добавить ТЦ";
+            this.addMallButton.UseVisualStyleBackColor = true;
+            this.addMallButton.Click += new System.EventHandler(this.addMallButton_Click);
+            // 
+            // changeMallButton
+            // 
+            this.changeMallButton.Location = new System.Drawing.Point(800, 474);
+            this.changeMallButton.Name = "changeMallButton";
+            this.changeMallButton.Size = new System.Drawing.Size(153, 33);
+            this.changeMallButton.TabIndex = 12;
+            this.changeMallButton.Text = "Редактировать ТЦ";
+            this.changeMallButton.UseVisualStyleBackColor = true;
+            this.changeMallButton.Click += new System.EventHandler(this.changeMallButton_Click);
+            // 
             // ManagerC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 563);
+            this.ClientSize = new System.Drawing.Size(985, 581);
+            this.Controls.Add(this.changeMallButton);
+            this.Controls.Add(this.addMallButton);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.filterstatuscmb);
             this.Controls.Add(this.filterstatuslb);
             this.Controls.Add(this.filtersitycmb);
@@ -214,8 +255,9 @@ namespace RentOfMall
             this.Controls.Add(this.sortSityButton);
             this.Controls.Add(this.malldataGridView);
             this.Name = "ManagerC";
-            this.Text = "ManagerC";
+            this.Text = "Менеджер С/Список ТЦ";
             this.Load += new System.EventHandler(this.ManagerC_Load);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.NameFormlb, 0);
             this.Controls.SetChildIndex(this.exitButton, 0);
             this.Controls.SetChildIndex(this.malldataGridView, 0);
@@ -226,6 +268,10 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.filtersitycmb, 0);
             this.Controls.SetChildIndex(this.filterstatuslb, 0);
             this.Controls.SetChildIndex(this.filterstatuscmb, 0);
+            this.Controls.SetChildIndex(this.removeButton, 0);
+            this.Controls.SetChildIndex(this.addMallButton, 0);
+            this.Controls.SetChildIndex(this.changeMallButton, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.malldataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mallBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -251,5 +297,8 @@ namespace RentOfMall
         private System.Windows.Forms.ComboBox filtersitycmb;
         private System.Windows.Forms.Label filterstatuslb;
         private System.Windows.Forms.ComboBox filterstatuscmb;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button addMallButton;
+        private System.Windows.Forms.Button changeMallButton;
     }
 }

@@ -8,7 +8,7 @@ namespace RentOfMall
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model1")
+            : base("name=Model12")
         {
         }
 
@@ -46,10 +46,6 @@ namespace RentOfMall
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.Photo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Rent)
                 .WithRequired(e => e.Employee)
                 .HasForeignKey(e => e.ID_Employee)
@@ -65,10 +61,6 @@ namespace RentOfMall
 
             modelBuilder.Entity<Mall>()
                 .Property(e => e.Sity)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Mall>()
-                .Property(e => e.Image)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Mall>()
