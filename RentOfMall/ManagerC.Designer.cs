@@ -42,13 +42,17 @@ namespace RentOfMall
             this.sortSityButton = new System.Windows.Forms.Button();
             this.sortStatusButton = new System.Windows.Forms.Button();
             this.returnButton = new System.Windows.Forms.Button();
+            this.filtersitylb = new System.Windows.Forms.Label();
+            this.filtersitycmb = new System.Windows.Forms.ComboBox();
+            this.filterstatuslb = new System.Windows.Forms.Label();
+            this.filterstatuscmb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.malldataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mallBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // NameFormlb
             // 
-            this.NameFormlb.Location = new System.Drawing.Point(351, 34);
+            this.NameFormlb.Location = new System.Drawing.Point(347, 26);
             this.NameFormlb.Size = new System.Drawing.Size(264, 22);
             this.NameFormlb.Text = "Список Торговых центров";
             // 
@@ -130,7 +134,7 @@ namespace RentOfMall
             // 
             // sortSityButton
             // 
-            this.sortSityButton.Location = new System.Drawing.Point(23, 84);
+            this.sortSityButton.Location = new System.Drawing.Point(23, 77);
             this.sortSityButton.Name = "sortSityButton";
             this.sortSityButton.Size = new System.Drawing.Size(228, 27);
             this.sortSityButton.TabIndex = 3;
@@ -140,7 +144,7 @@ namespace RentOfMall
             // 
             // sortStatusButton
             // 
-            this.sortStatusButton.Location = new System.Drawing.Point(23, 117);
+            this.sortStatusButton.Location = new System.Drawing.Point(23, 110);
             this.sortStatusButton.Name = "sortStatusButton";
             this.sortStatusButton.Size = new System.Drawing.Size(228, 27);
             this.sortStatusButton.TabIndex = 4;
@@ -150,7 +154,7 @@ namespace RentOfMall
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(800, 99);
+            this.returnButton.Location = new System.Drawing.Point(800, 91);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(173, 24);
             this.returnButton.TabIndex = 5;
@@ -158,11 +162,53 @@ namespace RentOfMall
             this.returnButton.UseVisualStyleBackColor = true;
             this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
+            // filtersitylb
+            // 
+            this.filtersitylb.AutoSize = true;
+            this.filtersitylb.Location = new System.Drawing.Point(352, 77);
+            this.filtersitylb.Name = "filtersitylb";
+            this.filtersitylb.Size = new System.Drawing.Size(176, 18);
+            this.filtersitylb.TabIndex = 6;
+            this.filtersitylb.Text = "Фильтровать по городу";
+            // 
+            // filtersitycmb
+            // 
+            this.filtersitycmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filtersitycmb.FormattingEnabled = true;
+            this.filtersitycmb.Location = new System.Drawing.Point(550, 73);
+            this.filtersitycmb.Name = "filtersitycmb";
+            this.filtersitycmb.Size = new System.Drawing.Size(192, 26);
+            this.filtersitycmb.TabIndex = 7;
+            this.filtersitycmb.SelectedIndexChanged += new System.EventHandler(this.filtersitycmb_SelectedIndexChanged);
+            // 
+            // filterstatuslb
+            // 
+            this.filterstatuslb.AutoSize = true;
+            this.filterstatuslb.Location = new System.Drawing.Point(352, 118);
+            this.filterstatuslb.Name = "filterstatuslb";
+            this.filterstatuslb.Size = new System.Drawing.Size(180, 18);
+            this.filterstatuslb.TabIndex = 8;
+            this.filterstatuslb.Text = "Фильтровать по статусу";
+            // 
+            // filterstatuscmb
+            // 
+            this.filterstatuscmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filterstatuscmb.FormattingEnabled = true;
+            this.filterstatuscmb.Location = new System.Drawing.Point(550, 115);
+            this.filterstatuscmb.Name = "filterstatuscmb";
+            this.filterstatuscmb.Size = new System.Drawing.Size(192, 26);
+            this.filterstatuscmb.TabIndex = 9;
+            this.filterstatuscmb.SelectedIndexChanged += new System.EventHandler(this.filterstatuscmb_SelectedIndexChanged);
+            // 
             // ManagerC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 563);
+            this.Controls.Add(this.filterstatuscmb);
+            this.Controls.Add(this.filterstatuslb);
+            this.Controls.Add(this.filtersitycmb);
+            this.Controls.Add(this.filtersitylb);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.sortStatusButton);
             this.Controls.Add(this.sortSityButton);
@@ -176,6 +222,10 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.sortSityButton, 0);
             this.Controls.SetChildIndex(this.sortStatusButton, 0);
             this.Controls.SetChildIndex(this.returnButton, 0);
+            this.Controls.SetChildIndex(this.filtersitylb, 0);
+            this.Controls.SetChildIndex(this.filtersitycmb, 0);
+            this.Controls.SetChildIndex(this.filterstatuslb, 0);
+            this.Controls.SetChildIndex(this.filterstatuscmb, 0);
             ((System.ComponentModel.ISupportInitialize)(this.malldataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mallBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -197,5 +247,9 @@ namespace RentOfMall
         private System.Windows.Forms.Button sortSityButton;
         private System.Windows.Forms.Button sortStatusButton;
         private System.Windows.Forms.Button returnButton;
+        private System.Windows.Forms.Label filtersitylb;
+        private System.Windows.Forms.ComboBox filtersitycmb;
+        private System.Windows.Forms.Label filterstatuslb;
+        private System.Windows.Forms.ComboBox filterstatuscmb;
     }
 }
