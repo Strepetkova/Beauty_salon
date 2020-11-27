@@ -15,6 +15,7 @@ namespace RentOfMall
     {
         public static string pavilion;
         public static bool addchange;
+        public static int IDMall;
         Model1 db = new Model1();
         public ListOfPavilion()
         {
@@ -45,9 +46,9 @@ namespace RentOfMall
             var ID = (from p in db.Mall
                       where p.NameMall == NameMallTb.Text
                       select p.ID).First();
-            int id = ID;
+            ListOfPavilion.IDMall = ID;
             var pavilion = from p in db.Pavilion
-                           where p.IDMall == id
+                           where p.IDMall == ListOfPavilion.IDMall
                            select p;
             pavilionBindingSource.DataSource = pavilion.ToList();
             int countRows = pavilion.Count();
@@ -65,9 +66,9 @@ namespace RentOfMall
             var ID = (from p in db.Mall
                       where p.NameMall == NameMallTb.Text
                       select p.ID).First();
-            int id = ID;
+            ListOfPavilion.IDMall = ID;
             var pavilion = from p in db.Pavilion
-                           where p.IDMall == id
+                           where p.IDMall == ListOfPavilion.IDMall
                            select p;
             int countRows = pavilion.Count();
             if (countRows == 0)
@@ -88,9 +89,9 @@ namespace RentOfMall
             var ID = (from p in db.Mall
                       where p.NameMall == NameMallTb.Text
                       select p.ID).First();
-            int id = ID;
+            ListOfPavilion.IDMall = ID;
             var pavilion = from p in db.Pavilion
-                           where p.IDMall == id
+                           where p.IDMall == ListOfPavilion.IDMall
                            select p;
             int countRows = pavilion.Count();
             if (countRows == 0)

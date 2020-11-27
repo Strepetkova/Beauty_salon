@@ -73,6 +73,7 @@
     <Compile Include="Captcha.Designer.cs">
       <DependentUpon>Captcha.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEF\Employee.cs" />
     <Compile Include="InterfacePavilion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,7 +86,6 @@
     <Compile Include="ListOfPavilion.Designer.cs">
       <DependentUpon>ListOfPavilion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelEF\Employee.cs" />
     <Compile Include="InterfaceMall.cs">
       <SubType>Form</SubType>
     </Compile>
