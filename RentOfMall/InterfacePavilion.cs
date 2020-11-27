@@ -89,6 +89,7 @@ namespace RentOfMall
         }
         private void InterfacePavilion_Load(object sender, EventArgs e)
         {
+            MessageBox.Show($"{ListOfPavilion.IDMall}");
             if(ListOfPavilion.addchange == false)
             {
                 FillComboBox();
