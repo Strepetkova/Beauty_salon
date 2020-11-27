@@ -73,26 +73,24 @@ namespace RentOfMall
 
         private void sortStatusButton_Click(object sender, EventArgs e)
         {
-            //List<Mall> mall1 = (List<Mall>)mallBindingSource.List;
-            //mall1.Sort(MallStatusSort);
-        }
+            var sortOrder = new Dictionary<string, int>
+            {
+                {"План", 1 },
+                {"Строительство", 2 },
+                {"Реализация", 3 }
+            };
 
-        private void filtersitycmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (filtersitycmb.SelectedValue == null) return;
-            var filltersity = from p in db.Mall
-                             where p.Sity == (string)filtersitycmb.SelectedValue && p.Status != "Удален"
-                             select p;
-            mallBindingSource.DataSource = filltersity.ToList();
-        }
+            var defaultOrder = sortOrder.Max(x => x.Value) + 1;
 
-        private void filterstatuscmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (filtersitycmb.SelectedValue == null) return;
-            var fillstatus = from p in db.Mall
-                             where p.Status == (string)filterstatuscmb.SelectedValue && p.Status != "Удален"
-                             select p;
-            mallBindingSource.DataSource = fillstatus.ToList();
+            var remove = from p in db.Mall
+                         where p.Status != "Удален"
+                         select p;
+
+            var sortedStatus = remove
+                                .AsEnumerable()
+                                .OrderBy(p => (p.Status == "План") ? 0 : 1)
+                                .ThenBy(p => sortOrder.TryGetValue(p.Status, out var order) ? order : defaultOrder);
+            mallBindingSource.DataSource = sortedStatus.ToList();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -140,6 +138,24 @@ namespace RentOfMall
             {
                 mallBindingSource.DataSource = db.Mall.ToList();
             }
+        }
+
+        private void filtersitycmb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (filtersitycmb.SelectedValue == null) return;
+            var filltersity = from p in db.Mall
+                              where p.Sity == (string)filtersitycmb.SelectedValue && p.Status != "Удален"
+                              select p;
+            mallBindingSource.DataSource = filltersity.ToList();
+        }
+
+        private void filterstatuscmb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (filtersitycmb.SelectedValue == null) return;
+            var fillstatus = from p in db.Mall
+                             where p.Status == (string)filterstatuscmb.SelectedValue && p.Status != "Удален"
+                             select p;
+            mallBindingSource.DataSource = fillstatus.ToList();
         }
 
         //int MallStatusSort(Mall m1)

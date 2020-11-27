@@ -73,7 +73,7 @@
     <Compile Include="Captcha.Designer.cs">
       <DependentUpon>Captcha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs" />
+    <Compile Include="ModelEF\Employee.cs" />
     <Compile Include="InterfaceMall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,5 +138,6 @@
   <ItemGroup>
     <None Include="Resources\Эмблема.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

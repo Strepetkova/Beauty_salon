@@ -187,7 +187,7 @@ namespace RentOfMall
             this.filtersitycmb.Name = "filtersitycmb";
             this.filtersitycmb.Size = new System.Drawing.Size(192, 26);
             this.filtersitycmb.TabIndex = 7;
-            this.filtersitycmb.SelectedIndexChanged += new System.EventHandler(this.filtersitycmb_SelectedIndexChanged);
+            this.filtersitycmb.SelectionChangeCommitted += new System.EventHandler(this.filtersitycmb_SelectionChangeCommitted);
             // 
             // filterstatuslb
             // 
@@ -206,7 +206,7 @@ namespace RentOfMall
             this.filterstatuscmb.Name = "filterstatuscmb";
             this.filterstatuscmb.Size = new System.Drawing.Size(192, 26);
             this.filterstatuscmb.TabIndex = 9;
-            this.filterstatuscmb.SelectedIndexChanged += new System.EventHandler(this.filterstatuscmb_SelectedIndexChanged);
+            this.filterstatuscmb.SelectionChangeCommitted += new System.EventHandler(this.filterstatuscmb_SelectionChangeCommitted);
             // 
             // removeButton
             // 
