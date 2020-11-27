@@ -14,6 +14,8 @@ namespace RentOfMall
     public partial class InterfaceMall : RentOfMall.BasicForm
     {
         public static bool wrong = false;
+        public static string name;
+        public static string status;
 
         List<int> ID = new List<int>();
         public Model1 db { get; set; }
@@ -149,6 +151,7 @@ namespace RentOfMall
                 statuscmb.Text = mall.Status;
                 costtb.Text = mall.Cost.ToString();
                 sitycmb.Text = mall.Sity;
+                InterfaceMall.status = statuscmb.Text;
                 if (mall.Image == null)
                 {
                     imagepb.Image = null;
@@ -182,6 +185,7 @@ namespace RentOfMall
                                   select p.Sity)
                                   .Distinct();
             sitycmb.DataSource = fillfiltersity.ToList();
+            InterfaceMall.status = statuscmb.Text;
         }
         private void attachButton_Click(object sender, EventArgs e)
         {
@@ -203,7 +207,18 @@ namespace RentOfMall
                 doublestatuslb.Text = "Строительство";
             else if (statuscmb.Text == "Реализация")
                 doublestatuslb.Text = "Реализация";
+            InterfaceMall.status = doublestatuslb.Text;
 
+        }
+        private void nametb_TextChanged(object sender, EventArgs e)
+        {
+            InterfaceMall.name = nametb.Text;
+        }
+
+        private void listOfPavilionButton_Click(object sender, EventArgs e)
+        {
+            ListOfPavilion lp = new ListOfPavilion();
+            DialogResult dr = lp.ShowDialog();
         }
     }
 }

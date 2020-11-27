@@ -157,17 +157,5 @@ namespace RentOfMall
                              select p;
             mallBindingSource.DataSource = fillstatus.ToList();
         }
-
-        //int MallStatusSort(Mall m1)
-        //{
-        //    if (m1.Status == "План")
-        //        return -1;
-        //    else if (m1.Status == "Строительсто")
-        //        return 0;
-        //    else if (m1.Status == "Реализация")
-        //        return 1;
-        //    else
-        //        return 2;
-        //}
     }
 }

@@ -51,6 +51,7 @@ namespace RentOfMall
             this.IDtb = new System.Windows.Forms.TextBox();
             this.idlb = new System.Windows.Forms.Label();
             this.doublestatuslb = new System.Windows.Forms.Label();
+            this.listOfPavilionButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagepb)).BeginInit();
             this.SuspendLayout();
@@ -158,6 +159,7 @@ namespace RentOfMall
             this.nametb.Name = "nametb";
             this.nametb.Size = new System.Drawing.Size(265, 26);
             this.nametb.TabIndex = 11;
+            this.nametb.TextChanged += new System.EventHandler(this.nametb_TextChanged);
             // 
             // coeficenttb
             // 
@@ -262,11 +264,23 @@ namespace RentOfMall
             this.doublestatuslb.TabIndex = 25;
             this.doublestatuslb.Text = "label1";
             // 
+            // listOfPavilionButton
+            // 
+            this.listOfPavilionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(156)))), ((int)(((byte)(26)))));
+            this.listOfPavilionButton.Location = new System.Drawing.Point(311, 597);
+            this.listOfPavilionButton.Name = "listOfPavilionButton";
+            this.listOfPavilionButton.Size = new System.Drawing.Size(164, 28);
+            this.listOfPavilionButton.TabIndex = 26;
+            this.listOfPavilionButton.Text = "Список павильонов";
+            this.listOfPavilionButton.UseVisualStyleBackColor = false;
+            this.listOfPavilionButton.Click += new System.EventHandler(this.listOfPavilionButton_Click);
+            // 
             // InterfaceMall
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 645);
+            this.Controls.Add(this.listOfPavilionButton);
             this.Controls.Add(this.doublestatuslb);
             this.Controls.Add(this.idlb);
             this.Controls.Add(this.IDtb);
@@ -317,6 +331,7 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.IDtb, 0);
             this.Controls.SetChildIndex(this.idlb, 0);
             this.Controls.SetChildIndex(this.doublestatuslb, 0);
+            this.Controls.SetChildIndex(this.listOfPavilionButton, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagepb)).EndInit();
             this.ResumeLayout(false);
@@ -348,5 +363,6 @@ namespace RentOfMall
         private System.Windows.Forms.TextBox IDtb;
         private System.Windows.Forms.Label idlb;
         private System.Windows.Forms.Label doublestatuslb;
+        private System.Windows.Forms.Button listOfPavilionButton;
     }
 }
