@@ -25,6 +25,7 @@ namespace RentOfMall
         private void ListOfPavilion_Load(object sender, EventArgs e)
         {
             ZeroLb.Visible = false;
+            filterZero.Visible = false;
             /*присвоение полям Название и Статус
              значения с формы Интерфейс ТЦ*/
             NameMallTb.Text = InterfaceMall.name;
@@ -33,7 +34,7 @@ namespace RentOfMall
             FillTable();
 
             var floorCmb = (from p in db.Pavilion
-                           select p.Floor).Distinct();
+                            select p.Floor).Distinct();
             FilterFoorCmb.DataSource = floorCmb.ToList();
 
             var statusCmb = (from p in db.Pavilion
@@ -42,9 +43,11 @@ namespace RentOfMall
         }
         public void FillTable()
         {
+            ZeroLb.Visible = false;
+            filterZero.Visible = false;
             //вычисление ID ТЦ по его названию с помощью linq
             var ID = (from p in db.Mall
-                      where p.NameMall == NameMallTb.Text
+                      where p.NameMall == InterfaceMall.name
                       select p.ID).First();
             ListOfPavilion.IDMall = ID;
             var pavilion = from p in db.Pavilion
@@ -109,22 +112,31 @@ namespace RentOfMall
         private void removeButton_Click(object sender, EventArgs e)
         {
             Pavilion pav = (Pavilion)pavilionBindingSource.Current;
-            DialogResult dr = MessageBox.Show("Вы действтиельно хотите удалить павильон - " +
-                pav.NumberPavilion.ToString(), "Удаление павильона",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (pav.Status == "Забронирован" || pav.Status == "Арендован")
             {
-                db.Pavilion.Remove(pav);
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Внимание! Нельзя удалить данный павильон! Так как он арендован или забронирован",
+                    "Ошибка удаления: арендован или забронирован",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            FillTable();
+            else
+            {
+                DialogResult dr = MessageBox.Show("Вы действтиельно хотите удалить павильон - " +
+                    pav.NumberPavilion.ToString(), "Удаление павильона",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    db.Pavilion.Remove(pav);
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                FillTable();
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -135,7 +147,7 @@ namespace RentOfMall
             DialogResult dr = ip.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                pavilionBindingSource.DataSource = db.Pavilion.ToList();
+                FillTable();
             }
         }
 
@@ -144,13 +156,28 @@ namespace RentOfMall
             ListOfPavilion.addchange = false;
             InterfacePavilion ip = new InterfacePavilion();
             Pavilion pv = (Pavilion)pavilionBindingSource.Current;
-            ip.db = db;
-            ip.pv = pv;
-            DialogResult dr = ip.ShowDialog();
-            if (dr == DialogResult.OK)
+            if (pv.Status == "Забронирован" || pv.Status == "Арендован")
             {
-                pavilionBindingSource.DataSource = db.Pavilion.ToList();
+                MessageBox.Show("Внимание! Нельзя редактировать данный павильон! Так как он арендован или забронирован",
+                    "Ошибка редактирования: арендован или забронирован",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                ip.db = db;
+                ip.pv = pv;
+                DialogResult dr = ip.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    FillTable();
+                }
+            }
+        }
+
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            pavilionBindingSource.DataSource = null;
+            FillTable();
         }
     }
 }
