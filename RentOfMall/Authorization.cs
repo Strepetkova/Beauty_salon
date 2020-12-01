@@ -31,8 +31,8 @@ namespace RentOfMall
                 Captcha captcha = new Captcha();
                 DialogResult dr = captcha.ShowDialog();
             }
-            logintb.Text = "Vseslava@gmai.com";
-            passwordtb.Text = "fhDSBf";
+            logintb.Text = "Elizor@gmai.com";
+            passwordtb.Text = "yntiRS";
         }
 
         private void signInButton_Click(object sender, EventArgs e)
@@ -54,7 +54,12 @@ namespace RentOfMall
             {
                 em = employee;
                 au = this;
-                if(employee.Role == "Администратор"){ }
+                if(employee.Role == "Администратор")
+                {
+                    Administrator ad = new Administrator();
+                    ad.Show();
+                    Hide();
+                }
                 else if (employee.Role == "Менеджер А") { }
                 else if (employee.Role == "Менеджер С")
                 {

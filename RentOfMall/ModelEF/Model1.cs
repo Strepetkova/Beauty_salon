@@ -8,7 +8,7 @@ namespace RentOfMall
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model16")
+            : base("name=Model2")
         {
         }
 
@@ -22,7 +22,15 @@ namespace RentOfMall
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>()
-                .Property(e => e.FIO)
+                .Property(e => e.Surname)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.MiddleName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()

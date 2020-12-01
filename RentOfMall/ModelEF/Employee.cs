@@ -19,7 +19,16 @@ namespace RentOfMall
         public int ID { get; set; }
 
         [Required]
-        public string FIO { get; set; }
+        [StringLength(80)]
+        public string Surname { get; set; }
+
+        [Required]
+        [StringLength(80)]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(80)]
+        public string MiddleName { get; set; }
 
         [Required]
         [StringLength(60)]
