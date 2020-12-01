@@ -42,7 +42,7 @@ namespace RentOfMall
             {
                 if(surnameTb.Text ==""||nameTb.Text ==""|| middleNameTb.Text ==""||
                     loginTb.Text==""||passwordTb.Text==""||genderTb.Text==""||
-                    roleCmb.Text == "" || phoneTb.Text == "" || photoPcb.Image == null)
+                    roleCmb.Text == "" || phoneMaskTb.Text == "" || photoPcb.Image == null)
                 {
                     MessageBox.Show("Внимание! Необходимо заполнить все поля!",
                         "Ошибка сохранения: пустые поля!", MessageBoxButtons.OK,
@@ -58,7 +58,7 @@ namespace RentOfMall
                     em.Password = passwordTb.Text;
                     em.Gender = genderTb.Text;
                     em.Role = roleCmb.Text;
-                    em.Phone = phoneTb.Text;
+                    em.Phone = phoneMaskTb.Text;
                     if (photoPcb.Image == null)
                     {
                         em.Photo = null;
@@ -90,7 +90,7 @@ namespace RentOfMall
                 em.Password = passwordTb.Text;
                 em.Gender = genderTb.Text;
                 em.Role = roleCmb.Text;
-                em.Phone = phoneTb.Text;
+                em.Phone = phoneMaskTb.Text;
                 if (photoPcb.Image == null)
                 {
                     em.Photo = null;
@@ -126,7 +126,7 @@ namespace RentOfMall
                 passwordTb.Text = em.Password;
                 genderTb.Text = em.Gender;
                 roleCmb.Text = em.Role;
-                phoneTb.Text = em.Phone;
+                phoneMaskTb.Text = em.Phone;
                 if (em.Photo == null)
                 {
                     photoPcb.Image = null;

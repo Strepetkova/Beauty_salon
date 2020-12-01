@@ -47,9 +47,9 @@ namespace RentOfMall
             this.loginTb = new System.Windows.Forms.TextBox();
             this.passwordTb = new System.Windows.Forms.TextBox();
             this.genderTb = new System.Windows.Forms.TextBox();
-            this.phoneTb = new System.Windows.Forms.TextBox();
             this.attachButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.phoneMaskTb = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPcb)).BeginInit();
             this.SuspendLayout();
@@ -219,13 +219,6 @@ namespace RentOfMall
             this.genderTb.Size = new System.Drawing.Size(215, 26);
             this.genderTb.TabIndex = 20;
             // 
-            // phoneTb
-            // 
-            this.phoneTb.Location = new System.Drawing.Point(280, 404);
-            this.phoneTb.Name = "phoneTb";
-            this.phoneTb.Size = new System.Drawing.Size(215, 26);
-            this.phoneTb.TabIndex = 21;
-            // 
             // attachButton
             // 
             this.attachButton.Location = new System.Drawing.Point(326, 542);
@@ -246,14 +239,22 @@ namespace RentOfMall
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // phoneMaskTb
+            // 
+            this.phoneMaskTb.Location = new System.Drawing.Point(280, 404);
+            this.phoneMaskTb.Mask = "+7(999) 000-0000";
+            this.phoneMaskTb.Name = "phoneMaskTb";
+            this.phoneMaskTb.Size = new System.Drawing.Size(215, 26);
+            this.phoneMaskTb.TabIndex = 24;
+            // 
             // InterfaceEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 640);
+            this.Controls.Add(this.phoneMaskTb);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.attachButton);
-            this.Controls.Add(this.phoneTb);
             this.Controls.Add(this.genderTb);
             this.Controls.Add(this.passwordTb);
             this.Controls.Add(this.loginTb);
@@ -296,9 +297,9 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.loginTb, 0);
             this.Controls.SetChildIndex(this.passwordTb, 0);
             this.Controls.SetChildIndex(this.genderTb, 0);
-            this.Controls.SetChildIndex(this.phoneTb, 0);
             this.Controls.SetChildIndex(this.attachButton, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
+            this.Controls.SetChildIndex(this.phoneMaskTb, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPcb)).EndInit();
             this.ResumeLayout(false);
@@ -326,8 +327,8 @@ namespace RentOfMall
         private System.Windows.Forms.TextBox loginTb;
         private System.Windows.Forms.TextBox passwordTb;
         private System.Windows.Forms.TextBox genderTb;
-        private System.Windows.Forms.TextBox phoneTb;
         private System.Windows.Forms.Button attachButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.MaskedTextBox phoneMaskTb;
     }
 }
