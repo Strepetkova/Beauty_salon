@@ -13,6 +13,7 @@ namespace RentOfMall
 {
     public partial class Administrator : RentOfMall.BasicForm
     {
+        public static bool addchange = false;
         Model1 db = new Model1();
         public Administrator()
         {
@@ -54,6 +55,32 @@ namespace RentOfMall
                 }
             }
             employeeBindingSource.DataSource = db.Employee.ToList();
+        }
+
+        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            Administrator.addchange = true;
+            InterfaceEmployee ie = new InterfaceEmployee();
+            ie.db = db;
+            DialogResult dr = ie.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                employeeBindingSource.DataSource = db.Employee.ToList();
+            }
+        }
+
+        private void changeEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            Administrator.addchange = false;
+            InterfaceEmployee ie = new InterfaceEmployee();
+            Employee em = (Employee)employeeBindingSource.Current;
+            ie.db = db;
+            ie.em = em;
+            DialogResult dr = ie.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                employeeBindingSource.DataSource = db.Employee.ToList();
+            }
         }
     }
 }

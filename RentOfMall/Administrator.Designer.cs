@@ -107,6 +107,7 @@ namespace RentOfMall
             this.addEmployeeBtn.TabIndex = 13;
             this.addEmployeeBtn.Text = "Добавить";
             this.addEmployeeBtn.UseVisualStyleBackColor = true;
+            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
             // 
             // removeButton
             // 
@@ -126,6 +127,7 @@ namespace RentOfMall
             this.changeEmployeeBtn.TabIndex = 14;
             this.changeEmployeeBtn.Text = "Редактировать";
             this.changeEmployeeBtn.UseVisualStyleBackColor = true;
+            this.changeEmployeeBtn.Click += new System.EventHandler(this.changeEmployeeBtn_Click);
             // 
             // surnameDataGridViewTextBoxColumn
             // 
