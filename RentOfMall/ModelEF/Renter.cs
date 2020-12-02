@@ -17,23 +17,20 @@ namespace RentOfMall
 
         [Key]
         [Column("ID Renter")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID_Renter { get; set; }
 
-        [Column("ID Rent")]
-        public int? ID_Rent { get; set; }
+        [Required]
+        [StringLength(60)]
+        public string Name { get; set; }
 
-        [MaxLength(50)]
-        public byte[] Name { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Phone { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rent> Rent { get; set; }
-
-        public virtual Rent Rent1 { get; set; }
     }
 }

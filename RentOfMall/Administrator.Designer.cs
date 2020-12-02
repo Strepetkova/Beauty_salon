@@ -31,11 +31,6 @@ namespace RentOfMall
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SearchLb = new System.Windows.Forms.Label();
-            this.SearchTb = new System.Windows.Forms.TextBox();
-            this.addEmployeeBtn = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.changeEmployeeBtn = new System.Windows.Forms.Button();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +39,11 @@ namespace RentOfMall
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SearchLb = new System.Windows.Forms.Label();
+            this.SearchTb = new System.Windows.Forms.TextBox();
+            this.addEmployeeBtn = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.changeEmployeeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
@@ -81,53 +81,6 @@ namespace RentOfMall
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(889, 318);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // SearchLb
-            // 
-            this.SearchLb.AutoSize = true;
-            this.SearchLb.Location = new System.Drawing.Point(30, 87);
-            this.SearchLb.Name = "SearchLb";
-            this.SearchLb.Size = new System.Drawing.Size(55, 18);
-            this.SearchLb.TabIndex = 4;
-            this.SearchLb.Text = "Поиск:";
-            // 
-            // SearchTb
-            // 
-            this.SearchTb.Location = new System.Drawing.Point(91, 84);
-            this.SearchTb.Name = "SearchTb";
-            this.SearchTb.Size = new System.Drawing.Size(250, 26);
-            this.SearchTb.TabIndex = 5;
-            this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
-            // 
-            // addEmployeeBtn
-            // 
-            this.addEmployeeBtn.Location = new System.Drawing.Point(380, 459);
-            this.addEmployeeBtn.Name = "addEmployeeBtn";
-            this.addEmployeeBtn.Size = new System.Drawing.Size(133, 33);
-            this.addEmployeeBtn.TabIndex = 13;
-            this.addEmployeeBtn.Text = "Добавить";
-            this.addEmployeeBtn.UseVisualStyleBackColor = true;
-            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
-            // 
-            // removeButton
-            // 
-            this.removeButton.Location = new System.Drawing.Point(23, 459);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(118, 34);
-            this.removeButton.TabIndex = 12;
-            this.removeButton.Text = "Удалить";
-            this.removeButton.UseVisualStyleBackColor = true;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
-            // 
-            // changeEmployeeBtn
-            // 
-            this.changeEmployeeBtn.Location = new System.Drawing.Point(760, 459);
-            this.changeEmployeeBtn.Name = "changeEmployeeBtn";
-            this.changeEmployeeBtn.Size = new System.Drawing.Size(153, 33);
-            this.changeEmployeeBtn.TabIndex = 14;
-            this.changeEmployeeBtn.Text = "Редактировать";
-            this.changeEmployeeBtn.UseVisualStyleBackColor = true;
-            this.changeEmployeeBtn.Click += new System.EventHandler(this.changeEmployeeBtn_Click);
             // 
             // surnameDataGridViewTextBoxColumn
             // 
@@ -182,6 +135,53 @@ namespace RentOfMall
             // 
             this.employeeBindingSource.DataSource = typeof(RentOfMall.Employee);
             // 
+            // SearchLb
+            // 
+            this.SearchLb.AutoSize = true;
+            this.SearchLb.Location = new System.Drawing.Point(30, 87);
+            this.SearchLb.Name = "SearchLb";
+            this.SearchLb.Size = new System.Drawing.Size(55, 18);
+            this.SearchLb.TabIndex = 4;
+            this.SearchLb.Text = "Поиск:";
+            // 
+            // SearchTb
+            // 
+            this.SearchTb.Location = new System.Drawing.Point(91, 84);
+            this.SearchTb.Name = "SearchTb";
+            this.SearchTb.Size = new System.Drawing.Size(250, 26);
+            this.SearchTb.TabIndex = 5;
+            this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
+            // 
+            // addEmployeeBtn
+            // 
+            this.addEmployeeBtn.Location = new System.Drawing.Point(380, 459);
+            this.addEmployeeBtn.Name = "addEmployeeBtn";
+            this.addEmployeeBtn.Size = new System.Drawing.Size(133, 33);
+            this.addEmployeeBtn.TabIndex = 13;
+            this.addEmployeeBtn.Text = "Добавить";
+            this.addEmployeeBtn.UseVisualStyleBackColor = true;
+            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(23, 459);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(118, 34);
+            this.removeButton.TabIndex = 12;
+            this.removeButton.Text = "Удалить";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // changeEmployeeBtn
+            // 
+            this.changeEmployeeBtn.Location = new System.Drawing.Point(760, 459);
+            this.changeEmployeeBtn.Name = "changeEmployeeBtn";
+            this.changeEmployeeBtn.Size = new System.Drawing.Size(153, 33);
+            this.changeEmployeeBtn.TabIndex = 14;
+            this.changeEmployeeBtn.Text = "Редактировать";
+            this.changeEmployeeBtn.UseVisualStyleBackColor = true;
+            this.changeEmployeeBtn.Click += new System.EventHandler(this.changeEmployeeBtn_Click);
+            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -194,7 +194,7 @@ namespace RentOfMall
             this.Controls.Add(this.SearchLb);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Administrator";
-            this.Text = "Administrator";
+            this.Text = "Администратор/Интерфейс администратора";
             this.Load += new System.EventHandler(this.Administrator_Load);
             this.Controls.SetChildIndex(this.NameFormlb, 0);
             this.Controls.SetChildIndex(this.exitButton, 0);

@@ -9,12 +9,6 @@ namespace RentOfMall
     [Table("Rent")]
     public partial class Rent
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rent()
-        {
-            Renter1 = new HashSet<Renter>();
-        }
-
         [Key]
         [Column("ID Rent")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -49,8 +43,5 @@ namespace RentOfMall
         public virtual Pavilion Pavilion { get; set; }
 
         public virtual Renter Renter { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Renter> Renter1 { get; set; }
     }
 }

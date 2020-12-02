@@ -31,8 +31,8 @@ namespace RentOfMall
                 Captcha captcha = new Captcha();
                 DialogResult dr = captcha.ShowDialog();
             }
-            logintb.Text = "Elizor@gmai.com";
-            passwordtb.Text = "yntiRS";
+            logintb.Text = "Vladlena@gmai.com";
+            passwordtb.Text = "07i7Lb";
         }
 
         private void signInButton_Click(object sender, EventArgs e)
@@ -60,14 +60,23 @@ namespace RentOfMall
                     ad.Show();
                     Hide();
                 }
-                else if (employee.Role == "Менеджер А") { }
+                else if (employee.Role == "Менеджер А") 
+                {
+                    ManagerA ma = new ManagerA();
+                    ma.Show();
+                    Hide();
+                }
                 else if (employee.Role == "Менеджер С")
                 {
                     ManagerC mc = new ManagerC();
                     mc.Show();
                     Hide();
                 }
-                else if (employee.Role == "Удален") { }
+                else if (employee.Role == "Удален") 
+                {
+                    MessageBox.Show("Внимание! Ваш аккаунт удален!", "Ошибка входа: удаленный аккаунт",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

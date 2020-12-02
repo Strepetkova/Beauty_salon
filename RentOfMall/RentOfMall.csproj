@@ -79,13 +79,26 @@
     <Compile Include="Captcha.Designer.cs">
       <DependentUpon>Captcha.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEF\Employee.cs" />
+    <Compile Include="InterfaceOfRenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceOfRenter.Designer.cs">
+      <DependentUpon>InterfaceOfRenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfaceEmployee.Designer.cs">
       <DependentUpon>InterfaceEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelEF\Employee.cs" />
+    <Compile Include="ModelEF\Mall.cs" />
+    <Compile Include="ManagerA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerA.Designer.cs">
+      <DependentUpon>ManagerA.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacePavilion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,7 +117,6 @@
     <Compile Include="InterfaceMall.Designer.cs">
       <DependentUpon>InterfaceMall.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelEF\Mall.cs" />
     <Compile Include="ManagerC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,11 +148,17 @@
     <EmbeddedResource Include="InterfaceMall.resx">
       <DependentUpon>InterfaceMall.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceOfRenter.resx">
+      <DependentUpon>InterfaceOfRenter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfacePavilion.resx">
       <DependentUpon>InterfacePavilion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListOfPavilion.resx">
       <DependentUpon>ListOfPavilion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerA.resx">
+      <DependentUpon>ManagerA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerC.resx">
       <DependentUpon>ManagerC.cs</DependentUpon>
@@ -160,6 +178,8 @@
     <None Include="Properties\DataSources\Mall.datasource" />
     <None Include="Properties\DataSources\ManagerC.datasource" />
     <None Include="Properties\DataSources\Pavilion.datasource" />
+    <None Include="Properties\DataSources\Rent.datasource" />
+    <None Include="Properties\DataSources\Renter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

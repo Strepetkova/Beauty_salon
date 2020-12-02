@@ -8,7 +8,7 @@ namespace RentOfMall
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model2")
+            : base("name=Model17")
         {
         }
 
@@ -101,10 +101,9 @@ namespace RentOfMall
                 .Property(e => e.Status)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Rent>()
-                .HasMany(e => e.Renter1)
-                .WithOptional(e => e.Rent1)
-                .HasForeignKey(e => e.ID_Rent);
+            modelBuilder.Entity<Renter>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Renter>()
                 .Property(e => e.Phone)
@@ -117,7 +116,6 @@ namespace RentOfMall
             modelBuilder.Entity<Renter>()
                 .HasMany(e => e.Rent)
                 .WithRequired(e => e.Renter)
-                .HasForeignKey(e => e.ID_Renter)
                 .WillCascadeOnDelete(false);
         }
     }
