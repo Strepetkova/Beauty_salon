@@ -35,8 +35,8 @@ namespace RentOfMall
             this.addressLb = new System.Windows.Forms.Label();
             this.phoneLb = new System.Windows.Forms.Label();
             this.nameCompanyTb = new System.Windows.Forms.TextBox();
-            this.addressTb = new System.Windows.Forms.TextBox();
             this.phoneMaskTb = new System.Windows.Forms.MaskedTextBox();
+            this.addressRichTb = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@ namespace RentOfMall
             // phoneLb
             // 
             this.phoneLb.AutoSize = true;
-            this.phoneLb.Location = new System.Drawing.Point(73, 270);
+            this.phoneLb.Location = new System.Drawing.Point(73, 302);
             this.phoneLb.Name = "phoneLb";
             this.phoneLb.Size = new System.Drawing.Size(136, 18);
             this.phoneLb.TabIndex = 28;
@@ -106,31 +106,32 @@ namespace RentOfMall
             // 
             this.nameCompanyTb.Location = new System.Drawing.Point(237, 141);
             this.nameCompanyTb.Name = "nameCompanyTb";
-            this.nameCompanyTb.Size = new System.Drawing.Size(191, 26);
+            this.nameCompanyTb.Size = new System.Drawing.Size(224, 26);
             this.nameCompanyTb.TabIndex = 29;
-            // 
-            // addressTb
-            // 
-            this.addressTb.Location = new System.Drawing.Point(237, 204);
-            this.addressTb.Name = "addressTb";
-            this.addressTb.Size = new System.Drawing.Size(191, 26);
-            this.addressTb.TabIndex = 30;
             // 
             // phoneMaskTb
             // 
-            this.phoneMaskTb.Location = new System.Drawing.Point(237, 267);
+            this.phoneMaskTb.Location = new System.Drawing.Point(237, 299);
             this.phoneMaskTb.Mask = "+7(999) 000-0000";
             this.phoneMaskTb.Name = "phoneMaskTb";
-            this.phoneMaskTb.Size = new System.Drawing.Size(191, 26);
+            this.phoneMaskTb.Size = new System.Drawing.Size(224, 26);
             this.phoneMaskTb.TabIndex = 31;
+            // 
+            // addressRichTb
+            // 
+            this.addressRichTb.Location = new System.Drawing.Point(237, 192);
+            this.addressRichTb.Name = "addressRichTb";
+            this.addressRichTb.Size = new System.Drawing.Size(224, 69);
+            this.addressRichTb.TabIndex = 32;
+            this.addressRichTb.Text = "";
             // 
             // InterfaceOfRenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 427);
+            this.Controls.Add(this.addressRichTb);
             this.Controls.Add(this.phoneMaskTb);
-            this.Controls.Add(this.addressTb);
             this.Controls.Add(this.nameCompanyTb);
             this.Controls.Add(this.phoneLb);
             this.Controls.Add(this.addressLb);
@@ -149,8 +150,8 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.addressLb, 0);
             this.Controls.SetChildIndex(this.phoneLb, 0);
             this.Controls.SetChildIndex(this.nameCompanyTb, 0);
-            this.Controls.SetChildIndex(this.addressTb, 0);
             this.Controls.SetChildIndex(this.phoneMaskTb, 0);
+            this.Controls.SetChildIndex(this.addressRichTb, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +166,7 @@ namespace RentOfMall
         private System.Windows.Forms.Label addressLb;
         private System.Windows.Forms.Label phoneLb;
         private System.Windows.Forms.TextBox nameCompanyTb;
-        private System.Windows.Forms.TextBox addressTb;
         private System.Windows.Forms.MaskedTextBox phoneMaskTb;
+        private System.Windows.Forms.RichTextBox addressRichTb;
     }
 }

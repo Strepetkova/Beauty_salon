@@ -26,9 +26,9 @@ namespace RentOfMall
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if(ManagerC.addchange == true)
+            if(ManagerA.addchange == true)
             {
-                if(nameCompanyTb.Text == ""|| addressTb.Text == "" || phoneMaskTb.Text == "")
+                if(nameCompanyTb.Text == ""|| addressRichTb.Text == "" || phoneMaskTb.Text == "")
                 {
                     MessageBox.Show("Внимание! Необходимо заполнить все поля!",
                         "Ошибка сохранения: пустые поля!", MessageBoxButtons.OK,
@@ -38,7 +38,7 @@ namespace RentOfMall
                 {
                     Renter r = new Renter();
                     r.Name = nameCompanyTb.Text;
-                    r.Address = addressTb.Text;
+                    r.Address = addressRichTb.Text;
                     r.Phone = phoneMaskTb.Text;
                     db.Renter.Add(r);
                     try
@@ -55,7 +55,7 @@ namespace RentOfMall
             else if(ManagerA.addchange == false)
             {
                 r.Name = nameCompanyTb.Text;
-                r.Address = addressTb.Text;
+                r.Address = addressRichTb.Text;
                 r.Phone = phoneMaskTb.Text;
                 try
                 {
@@ -75,7 +75,7 @@ namespace RentOfMall
             {
                 ChangeNamelb.Text = "Редактирование арендатора";
                 nameCompanyTb.Text = r.Name;
-                addressTb.Text = r.Address;
+                addressRichTb.Text = r.Address;
                 phoneMaskTb.Text = r.Phone;
             }
             else if(ManagerA.addchange == true)
