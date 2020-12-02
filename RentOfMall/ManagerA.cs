@@ -52,12 +52,28 @@ namespace RentOfMall
 
         private void addRentButton_Click(object sender, EventArgs e)
         {
-
+            ManagerA.addchange = true;
+            InterfaceOfRenter ir = new InterfaceOfRenter();
+            ir.db = db;
+            DialogResult dr = ir.ShowDialog();
+            if(dr == DialogResult.OK)
+            {
+                renterBindingSource.DataSource = db.Renter.ToList();
+            }
         }
 
         private void changeRentButton_Click(object sender, EventArgs e)
         {
-
+            ManagerA.addchange = false;
+            InterfaceOfRenter ir = new InterfaceOfRenter();
+            Renter r = (Renter)renterBindingSource.Current;
+            ir.db = db;
+            ir.r = r;
+            DialogResult dr = ir.ShowDialog();
+            if(dr == DialogResult.OK)
+            {
+                renterBindingSource.DataSource = db.Renter.ToList();
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
