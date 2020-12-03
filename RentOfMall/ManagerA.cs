@@ -81,5 +81,10 @@ namespace RentOfMall
             Authorization.au.Show();
             this.Close();
         }
+
+        private void ListOfRent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

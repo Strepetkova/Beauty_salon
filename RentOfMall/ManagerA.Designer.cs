@@ -40,6 +40,7 @@ namespace RentOfMall
             this.removeButton = new System.Windows.Forms.Button();
             this.SearchTb = new System.Windows.Forms.TextBox();
             this.SearchLb = new System.Windows.Forms.Label();
+            this.ListOfRent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.renterBindingSource)).BeginInit();
@@ -149,11 +150,22 @@ namespace RentOfMall
             this.SearchLb.TabIndex = 18;
             this.SearchLb.Text = "Поиск:";
             // 
+            // ListOfRent
+            // 
+            this.ListOfRent.Location = new System.Drawing.Point(656, 86);
+            this.ListOfRent.Name = "ListOfRent";
+            this.ListOfRent.Size = new System.Drawing.Size(163, 25);
+            this.ListOfRent.TabIndex = 20;
+            this.ListOfRent.Text = "Список аренды";
+            this.ListOfRent.UseVisualStyleBackColor = true;
+            this.ListOfRent.Click += new System.EventHandler(this.ListOfRent_Click);
+            // 
             // ManagerA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 567);
+            this.Controls.Add(this.ListOfRent);
             this.Controls.Add(this.SearchTb);
             this.Controls.Add(this.SearchLb);
             this.Controls.Add(this.changeRentButton);
@@ -173,6 +185,7 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.changeRentButton, 0);
             this.Controls.SetChildIndex(this.SearchLb, 0);
             this.Controls.SetChildIndex(this.SearchTb, 0);
+            this.Controls.SetChildIndex(this.ListOfRent, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.renterBindingSource)).EndInit();
@@ -193,5 +206,6 @@ namespace RentOfMall
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource renterBindingSource;
+        private System.Windows.Forms.Button ListOfRent;
     }
 }

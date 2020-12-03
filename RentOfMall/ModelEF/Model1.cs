@@ -8,7 +8,7 @@ namespace RentOfMall
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model17")
+            : base("name=Model18")
         {
         }
 

@@ -80,6 +80,12 @@
       <DependentUpon>Captcha.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelEF\Employee.cs" />
+    <Compile Include="ListOfRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfRent.Designer.cs">
+      <DependentUpon>ListOfRent.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceOfRenter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListOfPavilion.resx">
       <DependentUpon>ListOfPavilion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListOfRent.resx">
+      <DependentUpon>ListOfRent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerA.resx">
       <DependentUpon>ManagerA.cs</DependentUpon>

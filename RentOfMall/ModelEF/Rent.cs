@@ -36,6 +36,8 @@ namespace RentOfMall
         [Column("Eng Data", TypeName = "date")]
         public DateTime Eng_Data { get; set; }
 
+        public double? CostOfRent { get; set; }
+
         public virtual Employee Employee { get; set; }
 
         public virtual Mall Mall { get; set; }
