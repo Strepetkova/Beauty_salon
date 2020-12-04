@@ -44,6 +44,7 @@ namespace RentOfMall
             this.addEmployeeBtn = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.changeEmployeeBtn = new System.Windows.Forms.Button();
+            this.ZeroSearchLB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
@@ -182,11 +183,23 @@ namespace RentOfMall
             this.changeEmployeeBtn.UseVisualStyleBackColor = true;
             this.changeEmployeeBtn.Click += new System.EventHandler(this.changeEmployeeBtn_Click);
             // 
+            // ZeroSearchLB
+            // 
+            this.ZeroSearchLB.AutoSize = true;
+            this.ZeroSearchLB.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ZeroSearchLB.Location = new System.Drawing.Point(125, 260);
+            this.ZeroSearchLB.Name = "ZeroSearchLB";
+            this.ZeroSearchLB.Size = new System.Drawing.Size(674, 40);
+            this.ZeroSearchLB.TabIndex = 22;
+            this.ZeroSearchLB.Text = "По результату поиска ничего не найдено!";
+            this.ZeroSearchLB.Visible = false;
+            // 
             // Administrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 561);
+            this.Controls.Add(this.ZeroSearchLB);
             this.Controls.Add(this.changeEmployeeBtn);
             this.Controls.Add(this.addEmployeeBtn);
             this.Controls.Add(this.removeButton);
@@ -205,6 +218,7 @@ namespace RentOfMall
             this.Controls.SetChildIndex(this.removeButton, 0);
             this.Controls.SetChildIndex(this.addEmployeeBtn, 0);
             this.Controls.SetChildIndex(this.changeEmployeeBtn, 0);
+            this.Controls.SetChildIndex(this.ZeroSearchLB, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
@@ -229,5 +243,6 @@ namespace RentOfMall
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.Label ZeroSearchLB;
     }
 }

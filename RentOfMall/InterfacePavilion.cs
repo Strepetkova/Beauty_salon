@@ -21,7 +21,7 @@ namespace RentOfMall
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if(ManagerC.addchange == true)
+            if(ListOfPavilion.addchange == true)
             {
                 if(floorTb.Text == "" || pavilionTb.Text == "" || areaTb.Text == ""
                     || statusCmb.Text == "" || CoeficentTb.Text == "" || CostMeterTb.Text == "")
@@ -40,8 +40,9 @@ namespace RentOfMall
                     }
                     else
                     {
+                        int pavil = ListOfPavilion.IDMall;
                         Pavilion p = new Pavilion();
-                        p.IDMall = ListOfPavilion.IDMall;
+                        p.IDMall = pavil;
                         p.Floor = Convert.ToInt32(floorTb.Text);
                         p.NumberPavilion = pavilionTb.Text;
                         p.Area = Convert.ToDouble(areaTb.Text);
@@ -61,9 +62,10 @@ namespace RentOfMall
                     }
                 }
             }
-            else if(ManagerC.addchange == false)
+            else if(ListOfPavilion.addchange == false)
             {
-                pv.IDMall = ListOfPavilion.IDMall;
+                int ID = ListOfPavilion.IDMall;
+                pv.IDMall = ID;
                 pv.Floor = Convert.ToInt32(floorTb.Text);
                 pv.NumberPavilion = pavilionTb.Text;
                 pv.Area = Convert.ToDouble(areaTb.Text);

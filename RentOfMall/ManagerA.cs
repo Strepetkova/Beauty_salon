@@ -29,10 +29,15 @@ namespace RentOfMall
 
         private void SearchTb_TextChanged(object sender, EventArgs e)
         {
+            ZeroSearchLB.Visible = false;
             renter = renter1;
             int nSearch = SearchTb.Text.Length;
             renter = renter.Where(p => (p.Name.Length >= nSearch) && p.Name.Contains(SearchTb.Text)).ToList();
             renterBindingSource.DataSource = renter;
+            if(renter.Count == 0)
+            {
+                ZeroSearchLB.Visible = true;
+            }
         }
 
         private void removeButton_Click(object sender, EventArgs e)

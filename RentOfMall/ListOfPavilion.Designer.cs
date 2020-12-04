@@ -31,6 +31,7 @@ namespace RentOfMall
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pavilionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusMallTb = new System.Windows.Forms.TextBox();
             this.NameMallTb = new System.Windows.Forms.TextBox();
             this.statusMallLb = new System.Windows.Forms.Label();
@@ -44,15 +45,13 @@ namespace RentOfMall
             this.removeButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.changeButton = new System.Windows.Forms.Button();
-            this.pavilionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDMallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnButton = new System.Windows.Forms.Button();
             this.floorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberPavilionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сoefficientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costSquareMeterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pavilionBindingSource)).BeginInit();
@@ -78,7 +77,6 @@ namespace RentOfMall
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDMallDataGridViewTextBoxColumn,
             this.floorDataGridViewTextBoxColumn,
             this.numberPavilionDataGridViewTextBoxColumn,
             this.areaDataGridViewTextBoxColumn,
@@ -90,6 +88,10 @@ namespace RentOfMall
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(925, 302);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // pavilionBindingSource
+            // 
+            this.pavilionBindingSource.DataSource = typeof(RentOfMall.Pavilion);
             // 
             // statusMallTb
             // 
@@ -213,16 +215,15 @@ namespace RentOfMall
             this.changeButton.UseVisualStyleBackColor = true;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
-            // pavilionBindingSource
+            // returnButton
             // 
-            this.pavilionBindingSource.DataSource = typeof(RentOfMall.Pavilion);
-            // 
-            // iDMallDataGridViewTextBoxColumn
-            // 
-            this.iDMallDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iDMallDataGridViewTextBoxColumn.DataPropertyName = "IDMall";
-            this.iDMallDataGridViewTextBoxColumn.HeaderText = "Номер ТЦ";
-            this.iDMallDataGridViewTextBoxColumn.Name = "iDMallDataGridViewTextBoxColumn";
+            this.returnButton.Location = new System.Drawing.Point(550, 90);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(180, 24);
+            this.returnButton.TabIndex = 17;
+            this.returnButton.Text = "Показать исходное";
+            this.returnButton.UseVisualStyleBackColor = true;
+            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // floorDataGridViewTextBoxColumn
             // 
@@ -265,16 +266,6 @@ namespace RentOfMall
             this.costSquareMeterDataGridViewTextBoxColumn.DataPropertyName = "CostSquareMeter";
             this.costSquareMeterDataGridViewTextBoxColumn.HeaderText = "Стоимость кв. м.";
             this.costSquareMeterDataGridViewTextBoxColumn.Name = "costSquareMeterDataGridViewTextBoxColumn";
-            // 
-            // returnButton
-            // 
-            this.returnButton.Location = new System.Drawing.Point(550, 90);
-            this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(180, 24);
-            this.returnButton.TabIndex = 17;
-            this.returnButton.Text = "Показать исходное";
-            this.returnButton.UseVisualStyleBackColor = true;
-            this.returnButton.Click += new System.EventHandler(this.returnButton_Click);
             // 
             // ListOfPavilion
             // 
@@ -341,14 +332,13 @@ namespace RentOfMall
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMallDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pavilionBindingSource;
+        private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn floorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberPavilionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn сoefficientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costSquareMeterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource pavilionBindingSource;
-        private System.Windows.Forms.Button returnButton;
     }
 }
