@@ -15,6 +15,8 @@ namespace RentOfMall
     {
         public static bool addchange = false;
         Model1 db = new Model1();
+        List<Employee> employee = new List<Employee>();
+        List<Employee> employee1 = new List<Employee>();
         public Administrator()
         {
             InitializeComponent();
@@ -28,12 +30,16 @@ namespace RentOfMall
 
         private void Administrator_Load(object sender, EventArgs e)
         {
+            employee1 = db.Employee.ToList();
             employeeBindingSource.DataSource = db.Employee.ToList();
         }
 
         private void SearchTb_TextChanged(object sender, EventArgs e)
         {
-            
+            employee = employee1;
+            int nSearch = SearchTb.Text.Length;
+            employee = employee.Where(p => (p.Surname.Length >= nSearch) && p.Surname.Contains(SearchTb.Text)).ToList();
+            employeeBindingSource.DataSource = employee;
         }
 
         private void removeButton_Click(object sender, EventArgs e)

@@ -14,6 +14,8 @@ namespace RentOfMall
     {
         public static bool addchange = false;
         Model1 db = new Model1();
+        List<Renter> renter = new List<Renter>();
+        List<Renter> renter1 = new List<Renter>();
         public ManagerA()
         {
             InitializeComponent();
@@ -22,11 +24,15 @@ namespace RentOfMall
         private void ManagerA_Load(object sender, EventArgs e)
         {
             renterBindingSource.DataSource = db.Renter.ToList();
+            renter1 = db.Renter.ToList();
         }
 
         private void SearchTb_TextChanged(object sender, EventArgs e)
         {
-
+            renter = renter1;
+            int nSearch = SearchTb.Text.Length;
+            renter = renter.Where(p => (p.Name.Length >= nSearch) && p.Name.Contains(SearchTb.Text)).ToList();
+            renterBindingSource.DataSource = renter;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
