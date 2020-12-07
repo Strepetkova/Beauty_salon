@@ -31,8 +31,6 @@ namespace RentOfMall
                 Captcha captcha = new Captcha();
                 DialogResult dr = captcha.ShowDialog();
             }
-            logintb.Text = "Adam@gmai.com";
-            passwordtb.Text = "7SP9CV";
         }
 
         private void signInButton_Click(object sender, EventArgs e)
