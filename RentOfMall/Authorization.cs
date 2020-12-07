@@ -13,9 +13,7 @@ namespace RentOfMall
 {
     public partial class Authorization : RentOfMall.BasicForm
     {
-
         public static int count = 0;
-
         Model1 db = new Model1();
         public static Authorization au { get; set; }
         public static Employee em { get; set; }
