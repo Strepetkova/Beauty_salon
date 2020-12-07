@@ -39,16 +39,16 @@ namespace RentOfMall
             // 
             // captchapb
             // 
-            this.captchapb.Location = new System.Drawing.Point(47, 53);
+            this.captchapb.Location = new System.Drawing.Point(89, 61);
             this.captchapb.Margin = new System.Windows.Forms.Padding(4);
             this.captchapb.Name = "captchapb";
-            this.captchapb.Size = new System.Drawing.Size(280, 147);
+            this.captchapb.Size = new System.Drawing.Size(198, 118);
             this.captchapb.TabIndex = 0;
             this.captchapb.TabStop = false;
             // 
             // captchatb
             // 
-            this.captchatb.Location = new System.Drawing.Point(42, 220);
+            this.captchatb.Location = new System.Drawing.Point(51, 187);
             this.captchatb.Margin = new System.Windows.Forms.Padding(4);
             this.captchatb.Name = "captchatb";
             this.captchatb.Size = new System.Drawing.Size(280, 26);
@@ -56,7 +56,7 @@ namespace RentOfMall
             // 
             // upgradeButton
             // 
-            this.upgradeButton.Location = new System.Drawing.Point(23, 275);
+            this.upgradeButton.Location = new System.Drawing.Point(23, 243);
             this.upgradeButton.Margin = new System.Windows.Forms.Padding(4);
             this.upgradeButton.Name = "upgradeButton";
             this.upgradeButton.Size = new System.Drawing.Size(89, 29);
@@ -67,7 +67,7 @@ namespace RentOfMall
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(240, 275);
+            this.okButton.Location = new System.Drawing.Point(255, 243);
             this.okButton.Margin = new System.Windows.Forms.Padding(4);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(91, 29);
@@ -82,15 +82,15 @@ namespace RentOfMall
             this.Namelb.Location = new System.Drawing.Point(20, 21);
             this.Namelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Namelb.Name = "Namelb";
-            this.Namelb.Size = new System.Drawing.Size(348, 18);
+            this.Namelb.Size = new System.Drawing.Size(353, 18);
             this.Namelb.TabIndex = 4;
-            this.Namelb.Text = "Введите последовательность с рисунка в поле";
+            this.Namelb.Text = "Введите последовательность с рисунка в поле!";
             // 
             // Captcha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 327);
+            this.ClientSize = new System.Drawing.Size(382, 293);
             this.Controls.Add(this.Namelb);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.upgradeButton);
