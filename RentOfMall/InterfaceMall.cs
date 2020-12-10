@@ -57,7 +57,7 @@ namespace RentOfMall
                         m.NameMall = nametb.Text;
                         m.Status = statuscmb.Text;
                         m.QuantityPavilion = Convert.ToInt32(paviliontb.Text);
-                        m.Sity = sitycmb.Text;
+                        m.City = sitycmb.Text;
                         m.Cost = Convert.ToDouble(costtb.Text);
                         m.Сoefficient = Convert.ToDouble(coeficenttb.Text);
                         m.Floor = Convert.ToInt32(floortb.Text);
@@ -112,7 +112,7 @@ namespace RentOfMall
                     mall.NameMall = nametb.Text;
                     mall.Status = statuscmb.Text;
                     mall.QuantityPavilion = Convert.ToInt32(paviliontb.Text);
-                    mall.Sity = sitycmb.Text;
+                    mall.City = sitycmb.Text;
                     mall.Cost = Convert.ToDouble(costtb.Text);
                     mall.Сoefficient = Convert.ToDouble(coeficenttb.Text);
                     mall.Floor = Convert.ToInt32(floortb.Text);
@@ -150,7 +150,7 @@ namespace RentOfMall
                 coeficenttb.Text = mall.Сoefficient.ToString();
                 statuscmb.Text = mall.Status;
                 costtb.Text = mall.Cost.ToString();
-                sitycmb.Text = mall.Sity;
+                sitycmb.Text = mall.City;
                 InterfaceMall.status = statuscmb.Text;
                 if (mall.Image == null)
                 {
@@ -182,7 +182,7 @@ namespace RentOfMall
             statuscmb.DataSource = fillfilterstatus.ToList();
 
             var fillfiltersity = (from p in db.Mall
-                                  select p.Sity)
+                                  select p.City)
                                   .Distinct();
             sitycmb.DataSource = fillfiltersity.ToList();
             InterfaceMall.status = statuscmb.Text;
