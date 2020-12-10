@@ -15,7 +15,6 @@ namespace RentOfMall
             Rent = new HashSet<Rent>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [Required]

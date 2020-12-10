@@ -30,7 +30,7 @@ namespace RentOfMall
 
         [Required]
         [StringLength(50)]
-        public string Sity { get; set; }
+        public string City { get; set; }
 
         public double Cost { get; set; }
 

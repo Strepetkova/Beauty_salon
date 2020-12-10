@@ -157,5 +157,6 @@ namespace RentOfMall
                              select p;
             mallBindingSource.DataSource = fillstatus.ToList();
         }
+
     }
 }

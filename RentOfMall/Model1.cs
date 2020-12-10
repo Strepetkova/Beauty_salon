@@ -8,7 +8,7 @@ namespace RentOfMall
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model18")
+            : base("name=Model19")
         {
         }
 
@@ -68,7 +68,7 @@ namespace RentOfMall
                 .IsUnicode(false);
 
             modelBuilder.Entity<Mall>()
-                .Property(e => e.Sity)
+                .Property(e => e.City)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Mall>()

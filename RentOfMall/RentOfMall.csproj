@@ -129,7 +129,7 @@
     <Compile Include="ManagerC.Designer.cs">
       <DependentUpon>ManagerC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelEF\Model1.cs" />
+    <Compile Include="Model1.cs" />
     <Compile Include="ModelEF\Pavilion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
