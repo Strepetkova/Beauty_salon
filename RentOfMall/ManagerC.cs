@@ -32,7 +32,7 @@ namespace RentOfMall
             NotRemoveStatus();
 
             var fillfiltersity = (from p in db.Mall
-                                  select p.Sity)
+                                  select p.City)
                      .Distinct();
             filtersitycmb.DataSource = fillfiltersity.ToList();
 
@@ -61,7 +61,7 @@ namespace RentOfMall
         }
         int MallSitySort(Mall m1, Mall m2)
         {
-            int MallSort = m1.Sity.CompareTo(m2.Sity);
+            int MallSort = m1.City.CompareTo(m2.City);
             return MallSort;
         }
 
@@ -144,7 +144,7 @@ namespace RentOfMall
         {
             if (filtersitycmb.SelectedValue == null) return;
             var filltersity = from p in db.Mall
-                              where p.Sity == (string)filtersitycmb.SelectedValue && p.Status != "Удален"
+                              where p.City == (string)filtersitycmb.SelectedValue && p.Status != "Удален"
                               select p;
             mallBindingSource.DataSource = filltersity.ToList();
         }
